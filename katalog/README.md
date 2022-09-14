@@ -2,6 +2,7 @@ Link aplikasi Heroku: https://tugas2-caroline.herokuapp.com/katalog/
 
 - Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut 
   kaitan antara urls.py, views.py, models.py, dan berkas html;
+  
   Bagan: https://github.com/carolineest/Tugas2/issues/1#issue-1373477117
   
   Pada server Django, awalnya request yang masuk akan diproses melalui urls. Request kemudian akan diteruskan ke views yang 
@@ -12,13 +13,15 @@ Link aplikasi Heroku: https://tugas2-caroline.herokuapp.com/katalog/
   
 - Jelaskan kenapa menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa 
   menggunakan virtual environment?
-  virtual environment adalah tools untuk membuat lingkungan virtual python yang tertutup dan tidak bisa diakses secara 
+  
+  Virtual environment adalah tools untuk membuat lingkungan virtual python yang tertutup dan tidak bisa diakses secara 
   sembarangan. Program python yang berjalan di dalam virtual environment ini memiliki modul-modulnya sendiri, sehingga 
   program dari luar tidak dapat mengaksesnya. Virtual environment memungkinkan penggunaan dependencies yang berbeda-beda 
   antara proyek satu dengan yang lainnya yang berjalan pada satu sistem operasi yang sama. Tanpa menggunakan virtual 
   environment, kita tetap bisa membuat aplikasi web berbasis Django.
   
 - Jelaskan bagaimana cara kamu mengimplementasikan poin 1 sampai dengan 4 di atas.
+
   Sebelum memulai pengimplementasian, masuk ke dalam repositori yang sudah di-clone di komputer, kemudian buat dan nyalakan 
   virtual environment. Untuk membuat sebuah fungsi pada views.py yang dapat melakukan pengambilan data dari 
   model dan dikembalikan ke dalam sebuah HTML, buka views.py yang ada pada folder katalog dan buat sebuah fungsi yang menerima 
@@ -36,6 +39,6 @@ Link aplikasi Heroku: https://tugas2-caroline.herokuapp.com/katalog/
   dalam HTML untuk menampilkan daftar barang ke dalam tabel. Untuk memeriksa data di halaman web, jalankan proyek Django tersebut dan 
   buka di browser.
 
-  Untuk melakukan deployment ke Heroku, buka konfigurasi repositori GutHub dan buat dua action secrets yang isinya API key yang 
+  Untuk melakukan deployment ke Heroku, buka konfigurasi repositori GitHub dan buat dua action secrets yang isinya API key yang 
   didapatkan dari Heroku dan nama aplikasi heroku yang dibuat. Kemudian, buka Heroku dan hubungkan ke GitHub dengan memilih method 
   deployment GitHub. Terakhir, sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
