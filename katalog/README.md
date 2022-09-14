@@ -40,5 +40,5 @@ Link aplikasi Heroku: https://tugas2-caroline.herokuapp.com/katalog/
   buka di browser.
 
   Untuk melakukan deployment ke Heroku, buka konfigurasi repositori GitHub dan buat dua action secrets yang isinya API key yang 
-  didapatkan dari Heroku dan nama aplikasi heroku yang dibuat. Kemudian, buka Heroku dan hubungkan ke GitHub dengan memilih method 
+  didapatkan dari Heroku dan nama aplikasi Heroku yang dibuat. Kemudian, buka Heroku dan hubungkan ke GitHub dengan memilih method 
   deployment GitHub. Terakhir, sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
