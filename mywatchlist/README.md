@@ -48,4 +48,8 @@ Heroku dan nama aplikasi Heroku yang dibuat. Kemudian, buka Heroku dan hubungkan
 sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
 
 
+<<<<<<< HEAD
 Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
+=======
+Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
+>>>>>>> 38482d3b5771c52eafd5714350537d3114c95286
