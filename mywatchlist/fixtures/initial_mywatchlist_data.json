@@ -3,7 +3,7 @@
         "model":"mywatchlist.mywatchlist",
         "pk":1,
         "fields":{
-            "title":"The French Dispatch of the Liberty",
+            "title":"The French Dispatch of the Liberty, Kansas Evening Sun",
             "rating":"5",
             "watched":"yes",
             "release_date":"21/10/21",
