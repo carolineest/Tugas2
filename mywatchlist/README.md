@@ -20,6 +20,25 @@ Data delivery diperlukan dalam pengimplementasian sebuah platform karena kegiata
 data delivery yang file-nya tidak disimpan di server, namun di-generate oleh kode program.
 
 3. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Untuk membuat suatu aplikasi baru bernama mywatchlist, gunakan perintah “python manage.py startapp wishlist”. Kemudian, tambahkan mywatchlist pada
+variable installed apps di folder project_django. Akan muncul folder mywatchlist, kemudian isi file models.py di dalam folder tersebut dengan class yang berisi komponen dari laman mywatchlist. Setelah itu, lakukan migrasi dan tambahkan sebuah folder json yang isinya data dari komponen pada laman mywatchlist, juga masukkan data tersebut ke dalam database Django lokal.
 
+Kemudian, buka file views.py di folder mywatchlist dan buat sebuah fungsi yang menerima parameter request dan mengembalikan render. Buat juga
+sebuah folder bernama templates di dalam folder mywatchlist dan isifolder tersebut dengan sebuah file html yang diisi dengan data yang diperlukan.
+Setelah itu, buat sebuah file di dalam folder mywatchlist yang akan digunakan untuk melakukan routing terhadap fungsi views sehingga halaman HTML
+dapat ditampilkan melalui browser. Path dari aplikasi tersebut juga harus didaftarkan ke variable urlpatterns pada folder project_django.
+
+Untuk menghubungkan models dengan views dan template, import models yang sudah dibuat ke dalam file views.py, kemudian panggil fungsi query ke
+model database dan simpan hasil query tersebut ke dalam sebuah variable. Selanjutnya, untuk melakukan mapping, lakukan iterasi terhadap variable
+dari data.
+
+Untuk mengembalikan data dalam bentuk XML, JSON, dan HTTP, buat fungsi yang menerima parameter request pada file views.py, kemudian impor
+HttpResponse dan Serializer. Selanjutnya, buat sebuah variable yang akan menyimpan hasil query dari seluruh data. Tambahkan juga return berupa
+HttpResponse yang berisi parameter data hasil query yang sudah diserialisasi menjadi JSON/XML dan parameter content type-nya. Selanjutnya, impor
+fungsi yang sudah dibuat ke file urls.py dan tambahkan path url tersebut ke dalam variable urlpatterns.
+
+Untuk melakukan deployment ke Heroku, buka konfigurasi repositori GitHub dan buat dua action secrets yang isinya API key yang didapatkan dari
+Heroku dan nama aplikasi Heroku yang dibuat. Kemudian, buka Heroku dan hubungkan ke GitHub dengan memilih method deployment GitHub. Terakhir,
+sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
 
 Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
