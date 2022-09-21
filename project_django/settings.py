@@ -35,6 +35,8 @@ ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
