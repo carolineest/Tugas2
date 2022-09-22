@@ -1,4 +1,7 @@
-Tautan aplikasi Heroku: https://tugas-3-caroline.herokuapp.com/mywatchlist/
+Tautan aplikasi Heroku: 
+https://tugas-2-caroline.herokuapp.com/mywatchlist/html/
+https://tugas-2-caroline.herokuapp.com/mywatchlist/json/
+https://tugas-2-caroline.herokuapp.com/mywatchlist/xml/
 
 
 1. Jelaskan perbedaan antara JSON, XML, dan HTML!
@@ -48,8 +51,4 @@ Heroku dan nama aplikasi Heroku yang dibuat. Kemudian, buka Heroku dan hubungkan
 sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
 
 
-<<<<<<< HEAD
 Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
-=======
-Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
->>>>>>> 38482d3b5771c52eafd5714350537d3114c95286
