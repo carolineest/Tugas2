@@ -51,4 +51,8 @@ Heroku dan nama aplikasi Heroku yang dibuat. Kemudian, buka Heroku dan hubungkan
 sesuaikan nama aplikasi yang dibuat dan pengaturan yang ada.
 
 
-Tangkapan layar Postman: https://github.com/carolineest/Tugas2/issues/2#issue-1381104194
+Tangkapan layar Postman:
+
+![Screenshot (4451)](https://user-images.githubusercontent.com/88920841/191654194-a979f443-eb98-40cf-a89d-b3cb9a5a7b8b.png)
+![Screenshot (4453)](https://user-images.githubusercontent.com/88920841/191654197-87fcacfc-f339-45e7-a9e1-e4ff4e41eed7.png)
+![Screenshot (4452)](https://user-images.githubusercontent.com/88920841/191654199-2cbb3b44-e2f0-4d57-83e3-7e30d96de796.png)
