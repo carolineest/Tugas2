@@ -1,7 +1,7 @@
 Tautan aplikasi Heroku: 
-https://tugas-2-caroline.herokuapp.com/mywatchlist/html/
-https://tugas-2-caroline.herokuapp.com/mywatchlist/json/
-https://tugas-2-caroline.herokuapp.com/mywatchlist/xml/
+- https://tugas-2-caroline.herokuapp.com/mywatchlist/html/
+- https://tugas-2-caroline.herokuapp.com/mywatchlist/json/
+- https://tugas-2-caroline.herokuapp.com/mywatchlist/xml/
 
 
 1. Jelaskan perbedaan antara JSON, XML, dan HTML!
