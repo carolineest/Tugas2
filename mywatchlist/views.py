@@ -28,3 +28,7 @@ def show_json_by_id(request, id):
 def show_xml_by_id(request, id):
     data = mywatchlist.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+def have_watched(request):
+    data_watched = mywatchlist.objects.filter(watched = "yes")
+    return HttpResponse(serializers.serialize("xml", data_watched), content_type="application/xml")

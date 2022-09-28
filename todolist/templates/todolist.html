@@ -4,8 +4,8 @@
 <h1>Todolist</h1>
 <h3>Username: {{user.username}}</h3>
 
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 <button><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
 <table>
     <tr>
@@ -31,7 +31,7 @@
 
 <style>
     p {
-        text-align:center;
+        text-align:left;
         color:black; 
         font-size: 25px;
     }
@@ -41,16 +41,20 @@
     }
     th, td {
         background-color: white;
+        padding: 15px;
     }
     body, table {
         background-color: white;
     }
-    h5 {
-        text-align:center;
+    h1, h3 {
+        text-align:left;
         color:black; 
-        margin: 0;
-        padding: 0;
-        font-size: 15px;
+        margin: 10;
+        padding: 10;
+    }
+    button {
+        margin: 0 auto;
+        padding: 10;
     }
 </style>
 
