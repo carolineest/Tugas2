@@ -1,0 +1,26 @@
+{% block content %}  
+
+<div class = "login">
+    
+    <h3>Add a new task:</h3>  
+
+    <form method="POST" action="">  
+        {% csrf_token %}  
+        <div>
+            <label for="judul">Task: </label>
+            <input id="judul" type="text" name="title" required> 
+        </div>
+
+        <br>
+
+        <div>
+            <label for="deskripsi">Description: </label>
+            <input id="deskripsi" type="text" name="description" required> 
+        </div>
+
+        <br>
+
+        <input class="btn tambah_task" type="submit" name="Tambah Task Baru" required>
+    </form>
+</div>
+{% endblock content %}
