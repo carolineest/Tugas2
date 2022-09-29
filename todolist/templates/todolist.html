@@ -21,7 +21,11 @@
             <th>{{element.date}}</th>
             <th>{{element.title}}</th>
             <th>{{element.description}}</th>
-            <th>{{element.is_finished}}</th>
+                {% if element.is_finished %}
+                    <th>Selesai</th>
+                    {% else %}
+                    <th>Belum Selesai</th>
+                    {% endif %}
             <th><button><a href="{% url 'todolist:ubah_status' element.id %}">Ubah Status</a></button>
                 <button><a href="{% url 'todolist:hapus_task' element.id %}">Hapus Task</a></button>
             </th>
