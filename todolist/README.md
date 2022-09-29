@@ -1,11 +1,10 @@
-* Nama: Caroline Esther
-* NPM: 2106751915
+Caroline Esther (2106751915)
 
 Tautan aplikasi Heroku: [https://tugas-2-caroline.herokuapp.com/todolist/](https://tugas-2-caroline.herokuapp.com/todolist/)
 
 - Apa kegunaan `{% csrf_token %}` pada elemen `<form>`? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?
     
-    `{% csrf_token %}` adalah tag yang digunakan untuk menghindari serangan CSRF. Tag ini akan menghasilkan token acak di sisi server saat melakukan rendering pada page dan memastikan untuk melakukan pemeriksaan ulang token untuk setiap request yang datang kembali. ****Jika permintaan yang masuk tidak berisi token, permintaan tersebut tidak akan dieksekusi. Token sifatnya unik per sesi user dan terdiri dari value acak yang panjang agar sulit ditebak.
+    `{% csrf_token %}` adalah tag yang digunakan untuk menghindari serangan CSRF. Tag ini akan menghasilkan token acak di sisi server saat melakukan rendering pada page dan memastikan untuk melakukan pemeriksaan ulang token untuk setiap request yang datang kembali. Jika permintaan yang masuk tidak berisi token, permintaan tersebut tidak akan dieksekusi. Token sifatnya unik per sesi user dan terdiri dari value acak yang panjang agar sulit ditebak.
     
     CSRF atau Cross-Site Request Forgery sendiri adalah serangan yang memaksa user yang diautentikasi untuk mengirimkan request ke aplikasi Web yang saat ini diautentikasi. Serangan CSRF mengeksploitasi kepercayaan yang dimiliki aplikasi Web pada user yang diautentikasi. Serangan CSRF mengeksploitasi kerentanan dalam aplikasi Web jika tidak dapat membedakan antara permintaan yang dihasilkan oleh user secara individu dan permintaan yang dibuat oleh pengguna tanpa persetujuan mereka.
     
