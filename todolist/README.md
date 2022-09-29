@@ -13,10 +13,12 @@ Tautan aplikasi Heroku: [https://tugas-2-caroline.herokuapp.com/todolist/](https
     
 - Apakah kita dapat membuat elemen `<form>` secara manual (tanpa menggunakan *generator* seperti `{{ form.as_table }}`)? Jelaskan secara gambaran besar bagaimana cara membuat `<form>` secara manual.
     
-    Kita dapat membuat elemen `<form>` secara manual tanpa menggunakan generator seperti `{{ form.as_table }}`. Secara garis besar, `<form>` dapat dibuat dengan bantuan Form Class, ModelForm, Model formsetes, modelfom_factory, atau inline formsets yang sudah disediakan oleh Django.
+    Kita dapat membuat elemen `<form>` secara manual tanpa menggunakan generator seperti `{{ form.as_table }}`. Secara garis umum, kita dapat men-generate table untuk menjadi struktur dari form dengan bantuan `<tr>` dan `<td>`. Kemudian, input dapat kita masukkan dengan `<input>`. Setelah itu, kita dapat membuat sebuah button untuk membantu submisi dengan mengubah atribut `type=` menjadi `submit`.
     
 
 - Jelaskan proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada *database*, hingga munculnya data yang telah disimpan pada *template* HTML.
+
+    Pertama-tama, pengguna akan melakukan submisi melalui HTML form. Setelah pengguna menekan button submit, HTTP request akan dikirimkan dan server akan menerima data. Kemudian, request tersebut akan diperiksa validitasnya. Jika valid, maka program akan menyesuaikan dengan views yang ada. Views akan mengirimkan HTTP response dan laman HTML yang sesuai pada pengguna.
 
 - Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas.
     
