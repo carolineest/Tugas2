@@ -1,5 +1,5 @@
-Nama: Caroline Esther
-NPM: 2106751915
+* Nama: Caroline Esther
+* NPM: 2106751915
 
 Tautan aplikasi Heroku: [https://tugas-2-caroline.herokuapp.com/todolist/](https://tugas-2-caroline.herokuapp.com/todolist/)
 
