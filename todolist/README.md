@@ -1,5 +1,6 @@
 Caroline Esther (2106751915)
 
+# Tugas 4
 Tautan aplikasi Heroku: [https://tugas-2-caroline.herokuapp.com/todolist/](https://tugas-2-caroline.herokuapp.com/todolist/)
 
 - Apa kegunaan `{% csrf_token %}` pada elemen `<form>`? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen `<form>`?
@@ -40,3 +41,65 @@ Referensi:
 - [https://www.educative.io/answers/what-is-a-csrf-token-in-django](https://www.educative.io/answers/what-is-a-csrf-token-in-django)
 - [https://www.synopsys.com/glossary/what-is-csrf.html](https://www.synopsys.com/glossary/what-is-csrf.html)
 - [https://edikartono.com/django/belajar-membuat-forms-django](https://edikartono.com/django/belajar-membuat-forms-django)
+
+
+# Tugas 5
+### Apa perbedaan dari Inline, Internal, dan External CSS? Apa saja kelebihan dan kekurangan dari masing-masing style?
+Perbedaan utama dari ketiga hal ini adalah tempat penulisannya. Inline CSS adalah kode yang ditulis langsung pada atribut elemen HTML, internal CSS adalah kode yang ditulis di dalam tag <style> dan kode HTML biasanya dituliskan di bagian atas (header) file HTML, dan External CSS adalah kode yang ditulis terpisah dengan kode HTML.
+
+1. Inline CSS
+Kelebihan:
+- Memudahkan dalam perbaikan atribut HTML
+- Membantu saat pengujian dan melihat perubahan pada satu elemen saja
+- Load website menjadi lebih cepat dan HTTP request menjadi lebih kecil.
+
+Kekurangan:
+- Kurang efisien dalam penggunaan karena hanya bisa diterapkan pada satu atribut saja.
+- Kurang cocok untuk website dengan baris coding yang banyak
+
+2. Internal CSS
+Kelebihan:
+- Mudah dalam melakukan editing tiap halaman website
+- Tidak perlu melakukan upload file CSS karena masuk dalam file HTML
+- Class dan ID bisa dipakai oleh internal stylesheet
+- Mudah saat memperbaiki error CSS website
+
+Kekurangan:
+- Kurang efisien untuk penggunaan beberapa halaman website yang sama karena Anda harus menuliskan ulang.
+- Performa website menjadi lebih lambat karena setiap halaman memiliki CSS sendiri.
+- Ukuran file menjadi lebih besar karena setiap halaman memiliki CSS sendiri.
+
+3. External CSS
+Kelebihan:
+- Ukuran file HTML menjadi lebih kecil
+- Penulisan kode HTML menjadi lebih rapi
+- Loading website menjadi lebih cepat
+- File CSS bisa digunakan untuk beberapa halaman website berbeda
+
+Kekurangan:
+- Tidak cocok untuk halaman website yang membutuhkan halaman custom
+- Halaman website rawan berantakan saat file CSS gagal load dengan sempurna sehingga tampilan website berantakan.
+
+### Jelaskan tag HTML5 yang kamu ketahui.
+- <!DOCTYPE html> yang digunakan untuk menentukan tipe dokumen
+- <br> yang digunakan untuk menyisipkan single line break
+- <a> yang digunakan untuk menentukan hyperlink
+- <button> yang digunakan untuk menentukan button yang ditekan
+- <div> yang digunakan untuk menentukan sebuah bagian dari dokumen
+- <b> yang digunakan untuk menampilkan tulisan dengan gaya bold
+- <form> yang digunakan untuk menentukan form
+- <img> yang digunakan untuk menentukan sebuah gambar
+- <title> yang digunakan untuk menentukan title
+- <head> yang digunakan untuk menentukan informasi secara umum mengenai dokumen
+- <body> yang digunakan untuk menentukan tubuh elemen
+- <table> yang digunakan untuk menentukan table
+
+### Jelaskan tipe-tipe CSS selector yang kamu ketahui.
+- Tag Selector atau disebut juga Type Selector: selector yang memilih elemen berdasarkan nama tag.
+- Class Selector: selector yang memilih elemen berdasarkan nama class yang diberikan. Selector ini dibuat dengan tanda titik di depannya.
+- ID Selector: selector ini hampir sama dengan class selector. Perbedaannya terletak pada sifatnya yang unik atau hanya dapat digunakan oleh satu elemen saja dan ditandai dengan tanda "#" di depannya.
+- Attribute Selector: selector yang memilih elemen berdasarkan attribute.
+- Universal Selector: selector yang digunakan untuk menyeleksi semua elemen pada jangkauan (scope) tertentu.
+- Pseudo Selector: selector yang digunakan untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya.
+
+### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.

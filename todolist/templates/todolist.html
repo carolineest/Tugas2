@@ -1,65 +1,106 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% block content %}
-<h1>Todolist</h1>
-<h3>Username: {{user.username}}</h3>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>To Do List</title>
+    </head>
 
-<button><a href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
+    <body>
+        <div class = "login">
+            <h1>Todolist</h1>
+            <h3>Username: {{user.username}}</h3>
 
-<table>
-    <tr>
-        <th>Tanggal Pembuatan</th>
-        <th>Judul</th>
-        <th>Deskripsi</th>
-        <th>Status</th>
-        <th>Ubah</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for element in list_task %}
-        <tr>
-            <th>{{element.date}}</th>
-            <th>{{element.title}}</th>
-            <th>{{element.description}}</th>
-                {% if element.is_finished %}
-                    <th>Selesai</th>
-                    {% else %}
-                    <th>Belum Selesai</th>
-                    {% endif %}
-            <th><button><a href="{% url 'todolist:ubah_status' element.id %}">Ubah Status</a></button>
-                <button><a href="{% url 'todolist:hapus_task' element.id %}">Hapus Task</a></button>
-            </th>
-        </tr>
-    {% endfor %}
-</table>
+            <button><a type="submit" href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
+            <button><a type="submit" href="{% url 'todolist:logout' %}">Logout</a></button>
+
+            <table class="content-table">
+                <thead>
+                    <tr>
+                        <th>Tanggal Pembuatan</th>
+                        <th>Judul</th>
+                        <th>Deskripsi</th>
+                        <th>Status</th>
+                        <th>Ubah</th>
+                    </tr>
+                </thead>
+                {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+                {% for element in list_task %}
+                <tbody>
+                    <tr>
+                        <th>{{element.date}}</th>
+                        <th>{{element.title}}</th>
+                        <th>{{element.description}}</th>
+                            {% if element.is_finished %}
+                                <th>Selesai</th>
+                                {% else %}
+                                <th>Belum Selesai</th>
+                                {% endif %}
+                        <th><button><a href="{% url 'todolist:ubah_status' element.id %}">Ubah Status</a></button>
+                            <button><a href="{% url 'todolist:hapus_task' element.id %}">Hapus Task</a></button>
+                        </th>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+
+        
+    </body>
+</html>
 
 <style>
-    p {
-        text-align:left;
-        color:black; 
-        font-size: 25px;
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
     }
-    table, th, td {
-        border: 1px solid black;
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: montserrat;
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
+        height: 100vh;
+        overflow: hidden;
+    }
+    .login{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1300px;
+        background: white;
+        border-radius: 10px;
+    }
+    .login h1, h3{
+        text-align: center;
+        padding: 10px 0 10px 0;
+        border-bottom: 1px solid silver;
+    }
+    .content-table{
         border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 0.9em;
+        min-width: 400px;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        margin-left:auto;
+        margin-right:auto;
     }
-    th, td {
-        background-color: white;
-        padding: 15px;
+    .content-table thead tr{
+        background-color: #2691d9;
+        color: white;
+        font-weight: bold;
     }
-    body, table {
-        background-color: white;
+    .content-table th,
+    .content-table td {
+        padding: 12px 15px;
     }
-    h1, h3 {
-        text-align:left;
-        color:black; 
-        margin: 10;
-        padding: 10;
-    }
-    button {
-        margin: 0 auto;
-        padding: 10;
+
+    .content-table tbody tr{
+        border-bottom: 1px solid #dddddd;
     }
 </style>
-
-{% endblock content %}
