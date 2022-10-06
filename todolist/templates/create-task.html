@@ -46,14 +46,13 @@
         font-family: montserrat;
         background: linear-gradient(120deg, #2980b9, #8e44ad);
         height: 100vh;
-        overflow: hidden;
     }
     .login{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 1000px;
+        width: auto;
         background: white;
         border-radius: 10px;
     }
@@ -125,5 +124,10 @@
     input[type="submit"]:hover{
         border-color: #2691d9;
         transition: .5s;
+    }
+    @media screen and (max-width: 700px) {
+      .column {
+        width: 100%;
+      }
     }
 </style>
