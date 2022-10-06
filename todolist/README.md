@@ -103,3 +103,4 @@ Perbedaan utama dari ketiga hal ini adalah tempat penulisannya. Inline CSS adala
 - Pseudo Selector: selector yang digunakan untuk memilih elemen semu seperti state pada elemen, elemen before dan after, elemen ganjil, dan sebagainya.
 
 ### Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Secara umum, untuk mengimplementasikan checklist di atas, saya menambahkan beberapa potongan kode pada file login.html, register.html, todolist.html, dan create-task. Untuk melakukan kustomisasi template HTML, Saya menambahkan kode CSS yang diletakkan di antara tag `<style>` dan `</style>`. Selain itu, untuk kustomisasi halaman utama todo list menggunakan cards, saya menambahkan potongan kode yang membuat card dan mengiterasi isi dari todo list. Untuk membuat keempat halaman yang sudah dikustomisasi menjadi responsive, saya menambahkan media query pada setiap file HTML.
