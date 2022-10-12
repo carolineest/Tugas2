@@ -1,8 +1,8 @@
 Caroline Esther (2106751915)
 
-#Tugas 6
+# Tugas 6
 
-##Jelaskan perbedaan antara *asynchronous programming* dengan *synchronous programming.*
+## Jelaskan perbedaan antara *asynchronous programming* dengan *synchronous programming.*
 
 *Asynchronous programming* merupakan pendekatan yang tidak terikat pada protokol input maupun output. Pada pendekatan pemrograman ini, proses jalannya program tidak harus terikat dengan proses lain atau dapat berjalan secara independen. Pengguna dapat terus berinteraksi dengan laman ketika data dimuat. Sedangkan pada *synchronous programming*, proses akan dieksekusi satu persatu sesuai dengan urutan dan prioritas *task*. Pada pendekatan ini, pengguna harus menunggu ketika laman dimuat.
 
@@ -20,7 +20,7 @@ Asynchronous JavaScript and XML (AJAX) adalah salah satu konsep yang menerapkan 
 4. Membuat tombol `Add Task` yang akan membuka sebuah modal dengan form untuk menambahkan task pada file `todolist.html`. Kemudian, membuat fungsi yang berisi pengimplementasian AJAX POST untuk menambahkan task baru tersebut. List terbaru setelah ditambah task baru akan secara *asynchronous* ditampilkan.
 
 
-###Referensi
+### Referensi
 - https://binus.ac.id/malang/2022/05/asynchronous-vs-synchronous-programming/
 - http://www.myspsolution.com/news-events/solace-event-driven/
 - https://www.dicoding.com/blog/mengenal-fungsi-asynchronous-request-pada-javascript/
