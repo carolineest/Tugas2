@@ -10,10 +10,10 @@ Caroline Esther (2106751915)
 
 *Event-Driven Programming* adalah paradigma pemrograman yang alurnya ditentukan oleh suatu *event* yang merupakan keluaran/tindakan yang dilakukan pengguna atau berupa pesan dari program lainnya. Pada tugas ini, salah satu contoh penerapannya adalah *mouse* *event* *click* di `todolist.html` ketika ingin menghapus *task* dengan men-*click* button `Delete Task`
 
-##Jelaskan penerapan *asynchronous programming* pada AJAX.
+## Jelaskan penerapan *asynchronous programming* pada AJAX.
 Asynchronous JavaScript and XML (AJAX) adalah salah satu konsep yang menerapkan metode *asynchronous programming* dalam menjalankan pekerjaannya. AJAX merupakan teknik yang memungkinkan halaman web diperbarui secara *asynchronous*, yang berarti bahwa *browser* tidak perlu memuat ulang seluruh halaman ketika hanya sedikit data pada halaman yang berubah. AJAX hanya meneruskan informasi yang diperbarui ke dan dari server. Biasa nya AJAX digunakan untuk melakukan permintaan data (*request*) dan menangani sebuah tanggapan (*handling response*), baik *response* dalam bentuk XML, Javascript maupun JSON dari sebuah Rest API. 
 
-##Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas.
+## Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas.
 1. Membuat dua fungsi baru pada file `views.py` yang akan mengatasi penambahan dan penghapusan *task* yang mengembalikan data *task* dalam bentuk JSON.
 2. Menambahkan path `/todolist/json` dan `/todolist/add` pada *file* `urls.py` yang mengarah ke *view* pada poin 1.
 3. Membuat fungsi yang berisi pengimplementasian AJAX GET pada *file* `todolist.html`.
