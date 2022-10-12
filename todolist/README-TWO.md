@@ -6,7 +6,7 @@ Caroline Esther (2106751915)
 
 *Asynchronous programming* merupakan pendekatan yang tidak terikat pada protokol input maupun output. Pada pendekatan pemrograman ini, proses jalannya program tidak harus terikat dengan proses lain atau dapat berjalan secara independen. Pengguna dapat terus berinteraksi dengan laman ketika data dimuat. Sedangkan pada *synchronous programming*, proses akan dieksekusi satu persatu sesuai dengan urutan dan prioritas *task*. Pada pendekatan ini, pengguna harus menunggu ketika laman dimuat.
 
-##Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma *Event-Driven Programming*. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+## Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma *Event-Driven Programming*. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
 
 *Event-Driven Programming* adalah paradigma pemrograman yang alurnya ditentukan oleh suatu *event* yang merupakan keluaran/tindakan yang dilakukan pengguna atau berupa pesan dari program lainnya. Pada tugas ini, salah satu contoh penerapannya adalah *mouse* *event* *click* di `todolist.html` ketika ingin menghapus *task* dengan men-*click* button `Delete Task`
 
