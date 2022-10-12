@@ -1,149 +1,176 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js%22%3E"></script>
-        <title>To Do List</title>
-    </head>
-    
 
-    <body>
-        <div class = "login">
-            <h1>Todolist</h1>
-            <h3>Username: {{user.username}}</h3>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-            <button><a type="submit" href="{% url 'todolist:create-task' %}">Tambah Task Baru</a></button>
-            <button><a type="submit" href="{% url 'todolist:logout' %}">Logout</a></button>
+    <title>To Do List</title>
 
-            <div class="row">
-
-            <table class="content-table">
-                <thead>
-                    <tr>
-                        <th>Tanggal Pembuatan</th>
-                        <th>Judul</th>
-                        <th>Deskripsi</th>
-                        <th>Status</th>
-                        <th>Ubah</th>
-                    </tr>
-                </thead>
-                {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-                {% for element in list_task %}
-                <tbody>
-                    <tr>
-                        <th>{{element.date}}</th>
-                        <th>{{element.title}}</th>
-                        <th>{{element.description}}</th>
-                            {% if element.is_finished %}
-                                <th>Selesai</th>
-                                {% else %}
-                                <th>Belum Selesai</th>
-                                {% endif %}
-                        <th><button><a href="{% url 'todolist:ubah_status' element.id %}">Ubah Status</a></button>
-                            <button><a href="{% url 'todolist:hapus_task' element.id %}">Hapus Task</a></button>
-                        </th>
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
-
-            {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-            {% for element in list_task %}
-            <div class="card" style="width: 350px;">
-                <div class="card=body">
-                    <h6>{{element.date}}</h6>
-                    <h4>{{element.title}}</h4>
-                    <p>{{element.description}}</p>
-                        {% if element.is_finished %}
-                            <h6>Selesai</h6>
-                            {% else %}
-                            <h6>Belum Selesai</h6>
-                            {% endif %}
-
-                            <button><a href="{% url 'todolist:ubah_status' element.id %}">Ubah Status</a></button>
-                            <button><a href="{% url 'todolist:hapus_task' element.id %}">Hapus Task</a></button>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid navbar-light bg-light">
+                <a class="navbar-brand navbar-light bg-light" style="font-size: 30px;">&#128203;</a>
+                <button class="navbar-toggler navbar-light bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon navbar-light bg-light"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-light bg-light" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                        <a class="nav-link navbar-light bg-light cursor-pointer" data-bs-toggle="modal" data-bs-target="#modaladd" href="#">Add Task<span class="sr-only navbar-light bg-light"></span></a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link navbar-light bg-light" href="{% url 'todolist:logout' %}">Logout</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>            
-            {% endfor %}
-        </div>
-      </div>
-    </body>
+            </div>
+        </nav>
+    </header>
+
+<body>
+    <div class="d-flex justify-content-center mt-5 mb-5 text-center">
+        <h1>{{user.username}}'s Todolist</h1>
+    </div>
+
+    <form action="" method="POST" id="tambah_task">  
+        {% csrf_token %}  
+        <table>  
+            <div class="modal fade" id="modaladd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Add a New Task</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <input class="form-control" type="text" id="title" name="title" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+                            <br>
+                            <input class="form-control" type="text" id="description" name="description" placeholder="Description" aria-label="Description" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="createBtn">Create</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </table>
+    </form>
+    
+    <div class="row row-cols-md-3 mx-auto justify-content-center" id="container"></div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function show_card() {
+        let todolist = "";
+        $.ajax({
+            url: "{% url 'todolist:show_json' %}",
+            type: "GET",
+            dataType: "json",
+            success: function(data){
+                if(data == 0) {
+                    $('#container').html("")
+                }
+                else {
+                    for (i of data){
+                        console.log(data)
+                        todolist += `
+                        <div class="col-auto mb-3">
+                            <div class="card border-primary mx-auto" style="width: 18rem; background-color: rgb(255, 255, 255);">
+                                <div class="card-body text-light">
+                                    <h3 class="card-title">${i.fields.title}</h3>
+                                    <p class="card-text">${i.fields.description}</p>
+                                    <h6 class="card-text">${i.fields.date}</h6>
+                                    <h6 class="card-text">Status: ${i.fields.is_finished ? `Selesai`:`Belum Selesai`}</h6>
+                                    <a class="btn login_btn btn btn-warning form-control lg mt-3" href="status/${i.pk}">Change Status</a>
+                                    <a class="btn login_btn btn btn-danger form-control lg mt-2" onclick="delete_task(${i.pk})">Delete Task</a>
+                                </div>
+                            </div>
+                        </div>`;
+                        $('#container').html(todolist)
+                    }
+                }
+            },
+            error: function(data) {
+                console.log('Error')
+            }
+        })
+    }
+
+    function delete_task(pk){
+        $.ajax({
+            url: `/todolist/delete/${pk}`,
+            type: "DELETE",
+            success: function(data) {
+                console.log(data)
+                $(`#${pk}`).remove()
+                show_card()
+            }
+        })
+    }
+
+    $(document).on("submit", "#tambah_task", function(e) {
+        e.preventDefault();
+        $.ajax ({
+            url: "{% url 'todolist:add_ajax' %}",
+            type: "POST",
+            dataType:"json",
+            data: {
+                title:$("#title").val(),
+                description:$("#description").val(),
+                csrfmiddlewaretoken: "{{ csrf_token }}"
+            },
+            success: function(data) {
+                show_card();
+                const inputs = document.querySelectorAll('#title, #description');
+                inputs.forEach(input => {
+                    input.value = '';
+                });
+            }
+        })
+    })
+
+    $(document).ready(function () {
+        show_card();
+    })
+</script>
+
 </html>
 
 <style>
+    a:active { text-decoration: none; }
+    a:link { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:visited { text-decoration: none; }
+    
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
     *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-    }
-    body{
         margin: 0;
         padding: 0;
-        font-family: montserrat;
-        min-height: 100vh;
-        text-align: center;
-        vertical-align: middle; 
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
     }
-    .login{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 80%;
-        width: 90%;
-        background: white;
-        border-radius: 10px;
+    body {
+        background: linear-gradient(120deg, #2980b9, #8e44ad);
     }
-    .login h1, h3{
-        text-align: center;
-        padding: 0 0 10px 0;
-        border-bottom: 1px solid silver;
+    .navbar {
+        font-size: 30px;
     }
-    .card {
-    margin-top: 10px;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid rgb(179, 182, 230);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    background-color:rgba(45, 54, 183, 0.2);
-    }
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.75);
-    }
-    .content-table{
-        border-collapse: collapse;
-        margin: 25px 0;
-        font-size: 0.9em;
-        border-radius: 5px 5px 0 0;
-        overflow: hidden;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        margin-left:auto;
-        margin-right:auto;
-    }
-    .content-table thead tr{
-        background-color: #2691d9;
+    .d-flex h1 {
+        font-size: 55px;
         color: white;
         font-weight: bold;
+        margin: auto;
     }
-    .content-table th,
-    .content-table td {
-        padding: 12px 15px;
+    .card-title, .card-text {
+        color: black;
+        text-align: center;
     }
 
-    .content-table tbody tr{
-        border-bottom: 1px solid #dddddd;
-    }
-    @media screen and (max-width: 700px) {
-      .column {
-        width: 100%;
-      }
-    }
 </style>

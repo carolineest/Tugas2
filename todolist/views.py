@@ -7,6 +7,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from todolist.forms import Form
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse, JsonResponse
+from django.core import serializers
+import datetime
 
 # Create your views here.
 @login_required(login_url='/todolist/login/')
@@ -16,6 +20,11 @@ def show_todolist(request):
         'list_task': data_task
     }
     return render(request, "todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_json(request):
+    task = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', task), content_type='application/json')
 
 def register(request):
     form = UserCreationForm()
@@ -67,7 +76,35 @@ def ubah_status(request, id):
     status.save()
     return redirect('todolist:show_todolist')
 
-def hapus_status(request, id):
+def hapus_task(request, id):
     hapus = Task.objects.get(pk=id)
     hapus.delete()
     return redirect('todolist:show_todolist')
+
+@login_required(login_url='/todolist/login/')
+@csrf_exempt
+def add_ajax(request):
+    if request.method == 'POST':
+        date = datetime.datetime.now()
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        user = request.user
+        task = Task(user=user, date=date, title = title, description = description)
+        task.save()
+
+        output = {
+            'pk':task.pk,
+            'fields':{
+                'title':task.title,
+                'description':task.description,
+                'is_finished':task.is_finished,
+                'date':task.date,
+            }
+        }
+        return JsonResponse(output)
+
+@csrf_exempt
+def delete_ajax(request,id):
+    task = Task.objects.filter(pk=id)   
+    task.delete()
+    return JsonResponse({"task": "task dihapus"})
